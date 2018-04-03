@@ -1,0 +1,12 @@
+= form_with(model: bill_record, local: true) do |form|
+  - if bill_record.errors.any?
+    #error_explanation
+      h2
+        = pluralize(bill_record.errors.count, "error")
+        | prohibited this bill_record from being saved:
+      ul
+        - bill_record.errors.full_messages.each do |message|
+          li= message
+  .actions
+    = form.submit
+ 

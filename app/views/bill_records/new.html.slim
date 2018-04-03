@@ -1,0 +1,17 @@
+.wrapper
+  h4
+    | New Bill Record
+  = form_tag({ action: "create"} , html: { method: :post }) do |f|
+    br
+    h5
+      | Rate
+    .form-group.row
+      .col-sm-8
+        = text_field_tag 'quantity', Rate.last.rate, class: 'form-control input-sm', disabled: true
+    h5
+      | Quantity
+    .form-group.row
+      .col-sm-8
+        = text_field_tag 'quantity', nil, class: 'form-control input-sm', required: true, autocomplete: 'off'
+    = submit_tag 'Create', class: 'btn btn-default btn-sm', 'data-disable-with': 'Submitting..'
+    br

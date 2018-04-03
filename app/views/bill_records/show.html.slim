@@ -1,0 +1,22 @@
+.wrapper
+  .print_no_show
+    p#notice= notice
+    = link_to 'Back', new_bill_record_path, class: 'btn btn-default'
+   
+  br
+  br
+  table.table.table-bordered.table-hover style='width: 20%'
+    tr
+      td Time:
+      td = @bill_record.created_at.strftime("%d/%m/%Y %H::%M")
+    tr
+      td Rate:
+      td = @bill_record.rate
+    tr
+      td Quantity:
+      td = @bill_record.quantity
+    tr
+      td Total Amount:
+      td = @bill_record.amount
+  br/
+  input onclick="window.print()" type="button" class='btn btn-default' value=("PRINT") /
